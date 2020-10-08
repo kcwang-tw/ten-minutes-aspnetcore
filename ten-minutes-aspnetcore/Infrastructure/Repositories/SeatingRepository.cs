@@ -11,7 +11,13 @@ namespace ten_minutes_aspnetcore.Infrastructure.Repositories
     {
         public IEnumerable<Seating> GetAll()
         {
-            throw new NotImplementedException();
+            var seatings = new List<Seating>
+            {
+                new Seating { User = "Alice", Extension = "3333", CellPhone = "0911222333", Position = "1-1" },
+                new Seating { User = "Bob", Extension = "3111", CellPhone = "0922222333", Position = "1-2" }
+            };
+
+            return seatings;
         }
     }
 }

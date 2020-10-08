@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ten_minutes_aspnetcore.Domain.Models;
+using ten_minutes_aspnetcore.Domain.Repositories;
 
 namespace ten_minutes_aspnetcore.Controllers
 {
@@ -12,14 +13,17 @@ namespace ten_minutes_aspnetcore.Controllers
     [ApiController]
     public class SeatingsController : ControllerBase
     {
+        private readonly ISeatingRepository _seatingRepository;
+
+        public SeatingsController(ISeatingRepository seatingRepository)
+        {
+            _seatingRepository = seatingRepository;
+        }
+
         [HttpGet]
         public IActionResult Get()
         {
-            var seatings = new List<Seating>
-            {
-                new Seating { User = "Alice", Extension = "3333", CellPhone = "0911222333", Position = "1-1" },
-                new Seating { User = "Bob", Extension = "3111", CellPhone = "0922222333", Position = "1-2" }
-            };
+            var seatings = _seatingRepository.GetAll();
 
             return Ok(seatings);
         }
