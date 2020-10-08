@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using ten_minutes_aspnetcore.Domain.Repositories;
+using ten_minutes_aspnetcore.Infrastructure.Repositories;
 
 namespace ten_minutes_aspnetcore
 {
@@ -26,6 +28,8 @@ namespace ten_minutes_aspnetcore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddScoped<ISeatingRepository, SeatingRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
