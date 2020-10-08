@@ -9,7 +9,7 @@ using ten_minutes_aspnetcore.Domain.Repositories;
 
 namespace ten_minutes_aspnetcore.Controllers
 {
-    [Route("api/Seatings")]
+    [Route("api/seatings")]
     [ApiController]
     public class SeatingsController : ControllerBase
     {
