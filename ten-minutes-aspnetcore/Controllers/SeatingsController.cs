@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ten_minutes_aspnetcore.Domain.Models;
 
 namespace ten_minutes_aspnetcore.Controllers
 {
@@ -22,13 +23,5 @@ namespace ten_minutes_aspnetcore.Controllers
 
             return Ok(seatings);
         }
-    }
-
-    public class Seating
-    {
-        public string User { get; set; }
-        public string Extension { get; set; }
-        public string CellPhone { get; set; }
-        public string Position { get; set; }
     }
 }
